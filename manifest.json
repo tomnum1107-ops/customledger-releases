@@ -1,0 +1,10 @@
+{
+  "app_id": "customledger",
+  "version": "0.2.0",
+  "url": "https://github.com/tomnum1107-ops/customledger-releases/releases/download/v0.2.0/customledger-0.2.0.zip",
+  "sha256": "5b9babb6eaa3c6f9b53da8286eb6238ad985feeeb91544bbdb1b86a06639efe5",
+  "signature": "e91308b5893c78d6d061a0cb47a3f3c648aec816fb02ddee6208ff9ee34d20aef0c184f6b9ca118836c1d1cbd16771e12fadd84bca0d806d26ab6183c4eaa800",
+  "channel": "beta",
+  "mandatory": false,
+  "min_updater": "1"
+}
