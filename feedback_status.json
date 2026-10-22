@@ -4,6 +4,11 @@
       "status": "declined",
       "note": "動作確認用（開発者のテスト送信）",
       "done_version": ""
+    },
+    "2": {
+      "status": "pending",
+      "note": "",
+      "done_version": ""
     }
   }
 }

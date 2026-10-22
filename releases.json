@@ -1,6 +1,30 @@
 {
   "releases": [
     {
+      "version": "0.2.1",
+      "date": "2026-10-23",
+      "mandatory": false,
+      "notes": [
+        "提案・改善リクエストの画面に、このPCから送ったものだけを表示するようにした",
+        "送信ボタンを押すとすぐ画面が戻り、ボタンが「送信中…」になって二重に押せないようにした",
+        "送れなかったリクエストを、再起動しなくても自動で送り直すようにした",
+        "Windows 11 のバージョンを正しく記録するようにした"
+      ],
+      "details": [
+        "初期データ: build.py が seed の reviews 表を空にする（apps/customledger.json の seed.strip_tables）",
+        "既存インストール: 起動時に <install>\\seed\\ledger.db と id・本文が一致する行へ reviews.origin='seed' を付け、表示・送信から除外（削除はしない）",
+        "reviews に origin 列を追加（''=通常 / seed=初期データ混入 / dup=連打の重複）",
+        "連打対策: 同じ種別・本文の行を120秒以内に2件作らない。既存の未送信行は300秒以内の同一内容を origin='dup' にする",
+        "送信方式: 画面の処理中に受け口へ送るのをやめ、裏のスレッドで送信（distkit DistClient.start_sender / kick_sender）。タイムアウト 8秒→20秒",
+        "未送信の判定を feedback_queue.json からDBの remote_id IS NULL に変更。0.2.0 のキューは feedback_queue.json.old に退避（同時書き込みで控えが消える不具合への対処）",
+        "再送: 起動時・送信時・5分ごと。つながらない時は次の機会にまとめて送る",
+        "受け口(GAS 2026-10-23a): 同じ device + local_id の再送は既存の受付番号を返して行を増やさない",
+        "提案画面: 受付番号が付くまで約20秒だけ自動で再読込、受付番号の無い行に「送信待ち」を表示",
+        "OS表記: platform.version() のビルド番号 22000 以上を Windows 11 と判定",
+        "公開リリースの本文に詳しい変更内容（この欄）を載せるようにした。アプリ内の更新履歴にも折りたたみで表示"
+      ]
+    },
+    {
       "version": "0.2.0",
       "date": "2026-10-13",
       "mandatory": false,
