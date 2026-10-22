@@ -6,9 +6,9 @@
       "done_version": ""
     },
     "2": {
-      "status": "pending",
-      "note": "",
-      "done_version": ""
+      "status": "done",
+      "note": "0.2.1で対応",
+      "done_version": "0.2.1"
     }
   }
 }
