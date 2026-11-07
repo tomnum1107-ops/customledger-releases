@@ -11,49 +11,49 @@
       "done_version": "0.2.1"
     },
     "3": {
-      "status": "pending",
-      "note": "",
-      "done_version": ""
+      "status": "done",
+      "note": "0.2.2で対応",
+      "done_version": "0.2.2"
     },
     "4": {
-      "status": "pending",
-      "note": "",
-      "done_version": ""
+      "status": "done",
+      "note": "0.2.1と0.2.2で対応",
+      "done_version": "0.2.2"
     },
     "5": {
-      "status": "pending",
-      "note": "",
+      "status": "declined",
+      "note": "重複送信（#3と同じ）",
       "done_version": ""
     },
     "6": {
-      "status": "pending",
-      "note": "",
+      "status": "declined",
+      "note": "重複送信（#4と同じ）",
       "done_version": ""
     },
     "7": {
-      "status": "pending",
-      "note": "",
+      "status": "declined",
+      "note": "重複送信（#3と同じ）",
       "done_version": ""
     },
     "8": {
-      "status": "pending",
-      "note": "",
+      "status": "declined",
+      "note": "重複送信（#4と同じ）",
       "done_version": ""
     },
     "9": {
-      "status": "pending",
-      "note": "",
-      "done_version": ""
+      "status": "done",
+      "note": "0.2.2で対応",
+      "done_version": "0.2.2"
     },
     "10": {
-      "status": "pending",
-      "note": "",
-      "done_version": ""
+      "status": "done",
+      "note": "0.2.2で対応",
+      "done_version": "0.2.2"
     },
     "11": {
-      "status": "pending",
-      "note": "",
-      "done_version": ""
+      "status": "done",
+      "note": "0.2.2で対応",
+      "done_version": "0.2.2"
     }
   }
 }
