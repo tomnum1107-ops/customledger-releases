@@ -1,6 +1,27 @@
 {
   "releases": [
     {
+      "version": "0.2.3",
+      "date": "2026-11-07",
+      "mandatory": false,
+      "notes": [
+        "別のPCへデータを移せるようにした（設定 →「引き継ぎ・バックアップ」で、台帳と写真を1つの引き継ぎファイルにまとめる／読み込む）",
+        "引き継ぎファイルを読み込む前に、今のデータを自動で控えるようにした（間違えて読み込んでも元に戻せる）",
+        "自動バックアップを追加した（1日1回・変更がない日は作らない・14回分を保存）。設定でオン・オフできる"
+      ],
+      "details": [
+        "新モジュール backup.py: make_archive / read_info / restore_archive / list_archives / prune / auto_backup_due / start_auto_backup",
+        "引き継ぎファイル形式(format 1): zip に customledger-handover.json（app・format・kind・app_version・created・件数）、ledger.db、uploads/<写真>。設定（ポート・PIN・secret_key・自動バックアップ）はPCごとなので含めない",
+        "DBの写しは sqlite3 の backup API で取る（使用中でも壊れない）。読み込みも backup API で稼働中のDBへ書き込み、その後 init_db()（列追加）と配布版では hide_seed_reviews / hide_duplicate_reviews を再実行",
+        "読み込み時の検査: 目印ファイル・app=customledger・format・app_version が今の版以下・PRAGMA integrity_check・vehicles 表の存在。どれかが駄目なら何も変更しない",
+        "写真の展開は basename のみ・画像拡張子のみ（zip slip 対策）。読み込み時は今の写真を消してからファイルの写真を入れる（今の写真は読み込み前の控えに残る）",
+        "読み込む前に %APPDATA%\\CustomLedger\backups\\読み込み前の控え_<日時>.zip を作成（5件まで）。選んだファイルは一時コピーから読み込む（控え作成・古い控えの削除で選んだファイル自体が消えないように）",
+        "画面 /data（設定から遷移）: 書き出しはダウンロードフォルダへ「カスタム台帳_引き継ぎ_<日時>.zip」。読み込み候補はダウンロードフォルダの引き継ぎファイル＋backups フォルダの zip。ほかの場所はファイル選択でアップロード（この操作のみ上限4GB）",
+        "引き継ぎ・バックアップの画面と操作はPC本体（127.0.0.1）のみ。スマホ（LAN）は403",
+        "自動バックアップ: settings.backup_enabled（既定オン）。起動60秒後から30分ごとに確認し、前回から24時間以上かつ台帳・写真の更新時刻が前回より新しいときだけ backups\\自動バックアップ_<日時>.zip を作成、14件まで残す。「今すぐバックアップ」ボタンあり"
+      ]
+    },
+    {
       "version": "0.2.2",
       "date": "2026-11-07",
       "mandatory": false,
