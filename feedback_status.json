@@ -54,6 +54,11 @@
       "status": "done",
       "note": "0.2.2で対応",
       "done_version": "0.2.2"
+    },
+    "12": {
+      "status": "pending",
+      "note": "",
+      "done_version": ""
     }
   }
 }
