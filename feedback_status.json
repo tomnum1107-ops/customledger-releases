@@ -56,9 +56,9 @@
       "done_version": "0.2.2"
     },
     "12": {
-      "status": "pending",
-      "note": "",
-      "done_version": ""
+      "status": "done",
+      "note": "0.2.5で対応（一覧の写真を軽い縮小版で表示）",
+      "done_version": "0.2.5"
     }
   }
 }
